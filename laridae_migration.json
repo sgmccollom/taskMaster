@@ -1,5 +1,5 @@
 {
-  "name": "20231110-todo-test-add-column",
+  "name": "20231110_todo_test_add_column",
   "operation": "add_column",
   "info": {
     "schema": "public",
