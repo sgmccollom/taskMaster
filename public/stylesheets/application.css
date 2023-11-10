@@ -217,6 +217,10 @@ form fieldset.actions a:hover {
   margin: -15px 0 0;
 }
 
+#todos > ul li .important {
+  margin: -15px 0 0 800px;
+}
+
 #todos header ul button {
   background-color: transparent;
   border: none;

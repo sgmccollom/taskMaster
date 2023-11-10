@@ -1,0 +1,13 @@
+{
+  "operation": "add_column",
+  "info": {
+    "schema": "public",
+    "table": "todos",
+    "column": {
+      "name": "important",
+      "type": "boolean",
+      "nullable": "false",
+      "default": "false"
+    }
+  }
+}
