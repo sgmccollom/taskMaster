@@ -1,0 +1,8 @@
+node_modules
+session-store.db
+lib/users.sql
+.env
+.dockerignore
+lib/schema.sql
+lib/seed-data.sql
+.vscode/settings.json

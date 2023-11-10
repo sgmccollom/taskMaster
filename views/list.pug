@@ -23,6 +23,11 @@ block main
             button Done
 
           h3= todo.title
+          form.important(action=`/lists/${todoList.id}/todos/${todo.id}/importance`
+                     method="post")
+            input(type="hidden" name="importance" value=!todo.important)
+            button Important
+
           form.delete(action=`/lists/${todoList.id}/todos/${todo.id}/destroy`
                       method="post")
             button Delete
