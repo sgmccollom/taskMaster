@@ -168,25 +168,6 @@ app.post("/lists/:todoListId/todos/:todoId/toggle",
   })
 );
 
-//Toggle importance of a todo
-app.post("/lists/:todoListId/todos/:todoId/importance",
-  requiresAuthentication,
-  catchError(async (req, res) => {
-    let { todoListId, todoId } = req.params;
-    let importance = await res.locals.store.toggleImportanceTodo(+todoListId, +todoId);
-    if (!importance) throw new Error("Not found.");
-
-    let todo = await res.locals.store.loadTodo(+todoListId, +todoId);
-    if (todo.important) {
-      req.flash("success", `"${todo.title}" marked important.`);
-    } else {
-      req.flash("success", `"${todo.title}" marked as NOT important!`);
-    }
-
-    res.redirect(`/lists/${todoListId}`);
-  })
-);
-
 // Delete a todo
 app.post("/lists/:todoListId/todos/:todoId/destroy",
   catchError(async (req, res) => {
