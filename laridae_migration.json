@@ -1,14 +1,13 @@
 {
-  "name": "20231110_todo_test_add_column",
+  "name": "todo_test_add_not_null",
   "operation": "add_column",
   "info": {
     "schema": "public",
     "table": "todos",
-    "column": {
-      "name": "important",
-      "type": "boolean",
-      "nullable": "false",
-      "default": "false"
-    }
+    "column": "title"
+  },
+  "functions": {
+    "up": "CASE WHEN title IS NULL THEN 'Todo_Name' ELSE title END",
+    "down": "title"
   }
 }
