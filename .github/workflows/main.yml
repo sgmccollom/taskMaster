@@ -7,7 +7,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: 2308-team-8/laridae-action@v0.0.2-alpha
+      - uses: 2308-team-8/laridae-action@v0.0.3-alpha
         with:
           action: full
           aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
