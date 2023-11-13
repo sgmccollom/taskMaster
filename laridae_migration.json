@@ -1,6 +1,6 @@
 {
   "name": "todo_test_add_not_null",
-  "operation": "add_column",
+  "operation": "add_not_null",
   "info": {
     "schema": "public",
     "table": "todos",
