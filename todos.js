@@ -199,7 +199,7 @@ app.post("/lists/:todoListId/todos",
   [
     body("todoTitle")
       .trim()
-      .isLength({ min: 1 })
+      // .isLength({ min: 1 })
       .withMessage("The todo title is required.")
       .isLength({ max: 100 })
       .withMessage("Todo title must be between 1 and 100 characters."),
