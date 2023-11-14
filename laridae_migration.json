@@ -1,14 +1,14 @@
 {
-  "name": "test_add_check_constraint",
+  "name": "test_add_check_constraint_2",
   "operation": "add_check_constraint",
   "info": {
     "schema": "public",
     "table": "todos",
     "column": "title",
-    "condition": "LENGTH(title) < 8"
+    "condition": "LENGTH(title) < 16"
   },
   "functions": {
-    "up": "CASE WHEN (NOT LENGTH(title) < 8) THEN 'trunced' ELSE title END",
+    "up": "CASE WHEN (NOT LENGTH(title) < 16) THEN 'truncated' ELSE title END",
     "down": "title"
   }
 }
