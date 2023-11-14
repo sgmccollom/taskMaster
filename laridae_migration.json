@@ -1,13 +1,14 @@
 {
-  "name": "todo_test_add_not_null",
-  "operation": "add_not_null",
+  "name": "test_add_check_constraint",
+  "operation": "add_check_constraint",
   "info": {
     "schema": "public",
     "table": "todos",
-    "column": "title"
+    "column": "title",
+    "condition": "LENGTH(title) < 8"
   },
   "functions": {
-    "up": "CASE WHEN title IS NULL THEN 'Todo_Name' ELSE title END",
+    "up": "CASE WHEN (NOT LENGTH(title) < 8) THEN 'trunced' ELSE title END",
     "down": "title"
   }
 }
