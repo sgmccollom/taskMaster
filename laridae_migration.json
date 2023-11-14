@@ -1,5 +1,5 @@
 {
-  "name": "test_add_check_constraint_4",
+  "name": "test_add_check_constraint_7",
   "operation": "add_check_constraint",
   "info": {
     "schema": "public",
