@@ -10,22 +10,16 @@ jobs:
       - uses: 2308-team-8/laridae-action@v0.0.5-alpha
         with:
           action: expand
-          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
-          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-          aws-resource-names: ${{secrets.AWS_RESOURCE_NAMES}}
+          aws-resource-names: ${{secrets.LARIDAE_RESOURCE_NAMES}}
           aws-region: us-east-1
       - uses: 2308-team-8/laridae-action@v0.0.5-alpha
         with:
           action: deploy
-          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
-          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-          aws-resource-names: ${{secrets.AWS_RESOURCE_NAMES}}
+          aws-resource-names: ${{secrets.LARIDAE_RESOURCE_NAMES}}
           aws-region: us-east-1
       - run: sleep 120
       - uses: 2308-team-8/laridae-action@v0.0.5-alpha
         with:
           action: contract
-          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
-          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-          aws-resource-names: ${{secrets.AWS_RESOURCE_NAMES}}
+          aws-resource-names: ${{secrets.LARIDAE_RESOURCE_NAMES}}
           aws-region: us-east-1
