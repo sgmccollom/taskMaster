@@ -1,6 +1,6 @@
-name: Test laridae action
+name: Demo laridae action
 on:
-  push:
+  pusash:
     branches:
       - main
 jobs:
