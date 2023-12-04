@@ -202,14 +202,6 @@ app.post(
 app.post(
   "/lists/:todoListId/todos",
   requiresAuthentication,
-  // [
-  //   body("todoTitle")
-  //     .trim()
-  //     .isLength({ min: 1 })
-  //     .withMessage("The todo title is required.")
-  //     .isLength({ max: 100 })
-  //     .withMessage("Todo title must be between 1 and 100 characters."),
-  // ],
   catchError(async (req, res) => {
     let todoTitle = req.body.todoTitle;
     let todoListId = req.params.todoListId;
