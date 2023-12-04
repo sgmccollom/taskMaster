@@ -1,6 +1,6 @@
 name: Demo laridae action
 on:
-  pusash:
+  push:
     branches:
       - main
 jobs:
