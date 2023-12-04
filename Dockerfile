@@ -14,4 +14,6 @@ COPY --chown=node:node . .
 
 EXPOSE 3001
 
-CMD [ "npm", "start" ]
+RUN npm start
+
+CMD [ "sleep", "120" ]
