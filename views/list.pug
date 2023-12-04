@@ -15,18 +15,13 @@ block main
             button.edit(type="submit") Edit List
 
     ul
-      each todo, index in todoList.todos
-        li
-          div.set-status-container
-            form.set-status(action=`/lists/${todoList.id}/todos/${todo.id}/setStatus/no`
-                           method="post")
-              button(class=`${todoList.todos[index].done === "no" ? "active" : ""}`) To do
-            form.set-status(action=`/lists/${todoList.id}/todos/${todo.id}/setStatus/partially`
-                           method="post")
-              button(class=`${todoList.todos[index].done === "partially" ? "active" : ""}`) Started
-            form.set-status(action=`/lists/${todoList.id}/todos/${todo.id}/setStatus/yes`
-                           method="post")
-              button(class=`${todoList.todos[index].done === "yes" ? "active" : ""}`) Done
+      each todo in todoList.todos
+        li(class=todo.done ? "done" : "")
+          form.check(action=`/lists/${todoList.id}/todos/${todo.id}/toggle`
+                     method="post")
+            input(type="hidden" name="done" value=!todo.done)
+            button Done
+
           h3= todo.title
           form.delete(action=`/lists/${todoList.id}/todos/${todo.id}/destroy`
                       method="post")
