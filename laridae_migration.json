@@ -1,13 +1,14 @@
 {
-  "name": "todo_test_add_not_null",
-  "operation": "add_not_null",
+  "name": "allow_partially_done",
+  "operation": "change_column_type",
   "info": {
     "schema": "public",
     "table": "todos",
-    "column": "title"
+    "column": "done",
+    "type": "varchar(9)"
   },
   "functions": {
-    "up": "CASE WHEN title IS NULL THEN 'Todo_Name' ELSE title END",
-    "down": "title"
+    "up": "CASE WHEN done THEN 'yes' ELSE 'no' END",
+    "down": "CASE WHEN done='yes' THEN 't' ELSE 'f' END"
   }
 }
