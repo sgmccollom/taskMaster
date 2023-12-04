@@ -186,35 +186,15 @@ form fieldset.actions a:hover {
 
 #todos > ul li {
   border-bottom: 1px solid #d7d7d7;
-  margin: 0 0 25px 60px;
+  margin: 0 0 25px 0px;
   padding: 10px 0;
-  position: relative;
+  display: flex;
 }
 
 #lists a {
   color: inherit;
   display: block;
   overflow: hidden;
-}
-
-#todos > ul li a {
-  overflow: hidden;
-  position: absolute;
-  text-indent: -8685px;
-  top: 50%;
-  z-index: 1;
-}
-
-#todos > ul li form {
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-}
-
-#todos > ul li .check {
-  height: 30px;
-  left: -45px;
-  margin: -15px 0 0;
 }
 
 #todos header ul button {
@@ -231,16 +211,6 @@ form fieldset.actions a:hover {
   -webkit-transition: color 200ms ease;
 }
 
-#todos > ul li .check button {
-  background-color: transparent;
-  border: 1px solid #666666;
-  border-radius: 4px;
-  color: transparent;
-  cursor: pointer;
-  height: 28px;
-  width: 28px;
-}
-
 #todos > ul li .delete button {
   background-color: transparent;
   border: none;
@@ -250,21 +220,24 @@ form fieldset.actions a:hover {
   width: 24px;
 }
 
-#todos > ul li .check [type="submit"]:hover {
+#todos > ul li .set-status-container [type="submit"]:hover {
   border-color: #dd5f4f;
 }
 
 #todos > ul li .delete {
   background: transparent url("../images/icon_delete.png") 0 3px no-repeat;
   height: 27px;
-  margin: -12px 0 0;
   opacity: 0.4;
-  right: 20px;
-  width: 24px;
+  margin-left: auto;
 }
 
 #todos > ul li .delete:hover {
   opacity: 1;
+}
+
+#todos > ul li h3 {
+  display: flex;
+  align-items: center;
 }
 
 #todos > ul li.done h3 {
@@ -272,12 +245,17 @@ form fieldset.actions a:hover {
   text-decoration: line-through;
 }
 
-#todos.done header .check {
+#todos.done header .set-status-container {
   display: none;
 }
 
-#todos > ul li.done .check {
-  background: transparent url("../images/icon_check.png") 50% 50% no-repeat;
+#todos > ul li .set-status-container {
+  margin-right: 1rem;
+}
+
+#todos > ul li.done .set-status-container {
+  background: transparent url("../images/icon.set-status-container.png") 50% 50%
+    no-repeat;
 }
 
 #todos header {
@@ -412,12 +390,13 @@ form fieldset.actions a:hover {
   width: 24px;
 }
 
-#todos header ul button.check:hover {
+#todos header ul button.set-status-container:hover {
   color: #00b059;
 }
 
-#todos header ul button.check::before {
-  background: transparent url("../images/icon_check.png") 50% 50% no-repeat;
+#todos header ul button.set-status-container::before {
+  background: transparent url("../images/icon.set-status-container.png") 50% 50%
+    no-repeat;
   border: 2px solid #3f3f3f;
 }
 
@@ -433,4 +412,83 @@ form fieldset.actions a:hover {
 #todos.done header h2 {
   color: #bebebe;
   text-decoration: line-through;
+}
+
+/* CSS */
+.set-status-container form button {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.set-status-container form button:hover,
+.set-status-container form button:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.set-status-container form button:hover {
+  transform: translateY(-1px);
+}
+
+.set-status-container form button:active {
+  background-color: #f0f0f1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+.set-status-container form {
+  display: inline-block;
+}
+
+.set-status-container form button.active {
+  background-color: #cd6655;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: white;
+  transform: translateY(0);
+}
+
+#todos header ul button::before {
+  content: "";
+  display: inline-block;
+  height: 24px;
+  margin: 0 7px 0 0;
+  vertical-align: -6px;
+  width: 24px;
+}
+
+#todos header ul button.check:hover {
+  color: #00b059;
+}
+
+#todos header ul button.check::before {
+  background: transparent url("../images/icon_check.png") 50% 50% no-repeat;
+  border: 2px solid #3f3f3f;
 }

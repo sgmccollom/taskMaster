@@ -1,14 +1,14 @@
 {
-  "name": "test_add_check_constraint_22",
-  "operation": "add_check_constraint",
+  "name": "allow_partially_done",
+  "operation": "change_column_type",
   "info": {
     "schema": "public",
     "table": "todos",
-    "column": "title",
-    "condition": "LENGTH(title) < 16"
+    "column": "done",
+    "type": "varchar(9)"
   },
   "functions": {
-    "up": "CASE WHEN (NOT LENGTH(title) < 16) THEN 'truncated' ELSE title END",
-    "down": "title"
+    "up": "CASE WHEN done THEN 'yes' ELSE 'no' END",
+    "down": "CASE WHEN done='yes' THEN 't' ELSE 'f' END"
   }
 }
