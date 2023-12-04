@@ -1,1 +1,1 @@
-README please.
+A simple todo app.
