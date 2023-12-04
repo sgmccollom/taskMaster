@@ -12,6 +12,7 @@ jobs:
           action: expand
           aws-resource-names: ${{secrets.LARIDAE_RESOURCE_NAMES}}
           aws-region: us-east-1
+      - run: sleep 120
       - uses: 2308-team-8/laridae-action@v0.0.8-alpha
         with:
           action: deploy
